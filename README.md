@@ -8,6 +8,9 @@ A Python wrapper for the Behance API
 
 ####Note that this library does not currently support any of the OAUTH based POST functionality. This functionality will be added in future releases.
 
+####This version of this library works in python3 only and its a result of the fork from the original repository https://github.com/aravenel/behance_python
+
+
 Please see [Behance API documentation](http://www.behance.net/dev) to get an
 API key and more information, including field names and example content.
 
@@ -34,7 +37,7 @@ been converted from unicode to ints to make life easier.
 
 ##API Object Usage
 ```python
-from behance_python.api import API
+from behance_python3.api import API
 
 behance = API('your_api_key_here')
 ```
