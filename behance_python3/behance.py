@@ -1,5 +1,5 @@
 import requests
-import behance_python.exceptions
+import behance_python3.exceptions
 from requests.exceptions import ConnectionError, HTTPError, Timeout, TooManyRedirects
 
 class Behance(dict):
@@ -47,9 +47,9 @@ class Behance(dict):
                 #If unknown error code, throw generic error.
                 n = _results.status_code
                 try:
-                    raise getattr(behance_python.exceptions, behance_python.exceptions.EXCEPTIONMAPPING[n])(n)
+                    raise getattr(behance_python3.exceptions, behance_python3.exceptions.EXCEPTIONMAPPING[n])(n)
                 except AttributeError:
-                    raise behance_python.exceptions.BehanceException(n)
+                    raise behance_python3.exceptions.BehanceException(n)
         except (ConnectionError, HTTPError, Timeout, TooManyRedirects) as e:
             #If requests raises an exception
             raise e

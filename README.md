@@ -1,4 +1,4 @@
-behance_python
+behance_python3
 ==============
 
 A Python wrapper for the Behance API
@@ -16,11 +16,11 @@ need to page through results until you receive a 500 error (in the form of
 a BehanceException) which will indicate that there are no more pages.
 
 #Installation
-    pip install behance_python
+    pip install behance_python3
 
 Or:
 
-    git clone git://github.com/aravenel/behance_python.git
+    git clone https://github.com/Menda0/behance_python3.git
 
 #Usage
 All wrapper functionality flows from the main API object which must be

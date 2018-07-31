@@ -1,17 +1,17 @@
 import urllib
 import requests
-from behance_python import ENDPOINTS, url_join
-from behance_python.project import Project
-from behance_python.user import User
-from behance_python.wip import WIP
-from behance_python.collection import Collection
-from behance_python.behance import Behance
-import behance_python.exceptions
+from behance_python3 import ENDPOINTS, url_join
+from behance_python3.project import Project
+from behance_python3.user import User
+from behance_python3.wip import WIP
+from behance_python3.collection import Collection
+from behance_python3.behance import Behance
+import behance_python3.exceptions
 from requests.exceptions import ConnectionError, HTTPError, Timeout, TooManyRedirects
 
 class API:
     """Base wrapper for the Behance api.
-    
+
     Must be instantiated using your provided auth key."""
 
     def __init__(self, auth_key):
@@ -28,9 +28,9 @@ class API:
             else:
                 n = _results.status_code
                 try:
-                    raise getattr(behance_python.exceptions, behance_python.exceptions.EXCEPTIONMAPPING[n])(n)
+                    raise getattr(behance_python3.exceptions, behance_python3.exceptions.EXCEPTIONMAPPING[n])(n)
                 except AttributeError:
-                    raise behance_python.exceptions.BehanceException(n)
+                    raise behance_python3.exceptions.BehanceException(n)
         except (ConnectionError, HTTPError, Timeout, TooManyRedirects) as e:
             raise e
 
@@ -40,7 +40,7 @@ class API:
         return Project(project_id, self.auth_key)
 
     def project_search(self, *args, **kwargs):
-        """Search for projects on Behance. 
+        """Search for projects on Behance.
         Takes any number of text search terms, as well as key/value filters.
 
         Valid filters: [valid values]

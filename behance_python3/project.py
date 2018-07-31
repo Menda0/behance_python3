@@ -1,9 +1,9 @@
-from behance_python.behance import Behance
-from behance_python import ENDPOINTS, url_join
+from behance_python3.behance import Behance
+from behance_python3 import ENDPOINTS, url_join
 
 class Project(Behance):
     """Class representing a Behance project.API_ENDPOINT
-    
+
     When instantiated, will call API. Instance will have attributes with names
     and values equal to JSON key/values returned from API.
     """

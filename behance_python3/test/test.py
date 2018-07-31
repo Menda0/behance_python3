@@ -1,7 +1,7 @@
 import unittest
 import os
-from behance_python.api import API
-from behance_python.exceptions import *
+from behance_python3.api import API
+from behance_python3.exceptions import *
 
 """
 TESTS
